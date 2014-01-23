@@ -1,0 +1,67 @@
+.navbar-brand
+{
+    color: white  !important;
+}
+
+.navbar-nav > li > a
+{
+    color: white  !important;
+}
+
+.navbar-default
+{
+    color: white  !important;
+    background: #006FBB !important;
+    border-color: #005188 !important;
+}
+
+.navbar
+{
+    border-radius: 0px !important;
+}
+
+th
+{
+    text-align: center !important;
+}
+
+i
+{
+	font-size:80px;
+}
+
+#ant div
+{
+	margin:10px 0px 10px 0px !important;
+}
+
+#ant
+{
+	font-size:20px;
+}
+
+#ant button
+{
+	padding:10px 15px 10px 15px;
+	height:200px !important;
+	text-align:center;
+}
+
+#table
+{
+	font-size:20px;
+}
+
+#table button
+{
+	padding:0px 15px 0px 15px;
+	height:150px !important;
+	text-align:center;
+}
+
+.row
+{
+	position:relative;
+	width:100%;
+	margin:auto;
+}
