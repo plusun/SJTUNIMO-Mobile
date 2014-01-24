@@ -1,5 +1,5 @@
 /*
- * Create modal in 'object'(Jquery).
+ * Create modal in 'object'(jQuery).
  *   Arguements:
  *     'id': modal's id,
  *     'title': modal's title,
@@ -65,17 +65,18 @@ function createModal(object, id, title, content)
     button.attr("class", "btn btn-default");
     button.attr("data-dismiss", "modal");
     button.html("关闭");
+	
     return body;
 }
 
 /*
  * Create a button and associate it with a modal
  * Arguements:
- *   'object': Jquery element,
+ *   'object': jQuery element,
  *   'id': modal's id,
  *   'name': button's name(content).
  * Return value:
- *   A button object(Jquery element).
+ *   A button object(jQuery element).
  */
 function createModalButton(object, id, name)
 {
@@ -89,7 +90,7 @@ function createModalButton(object, id, name)
 }
 
 /*
- * Attach an object(Jquery) to a modal
+ * Attach an object(jQuery) to a modal
  * Arguements:
  *   'object': the object which is attached,
  *   'id': modal's id.
@@ -104,7 +105,7 @@ function attachModal(object, id)
  * Description:
  *   Add row into table
  * Arguements:
- *   table: Jquery element of table,
+ *   table: jQuery element of table,
  *   The rest: three datas
  */
 function addRow(table, first, second, third)
@@ -115,4 +116,84 @@ function addRow(table, first, second, third)
 	row = "<tr><td>" + first + "</td>" + "<td>" + second + "</td>" +
 	"<td>" + third + "</td>" + "</tr>";
     table.append(row);
+}
+
+ /*
+ * Create form in 'object'(jQuery) 
+ * Arguements:
+ *   'object': jQuery element,
+ * Return value:
+ *   A form object(jQuery element).
+ */
+function createForm(object)
+{
+	var divStr = "<div></div>";
+	var form = '<form role="form"></form>';
+	
+	object.append(form);
+	
+	var form = object.children("form").last();
+	
+	return form;
+}
+
+ /*
+ * Add inputLine to 'object'(jQuery) 
+ * Arguements:
+ *   'object': jQuery element,
+ *   'content': inputLine's title.
+ *   'id': inputLine's id,
+ *   'placeHolder': place holder in the inputLine.
+ */
+function addInput(object, content, id, placeHolder)
+{
+	var divStr = "<div></div>";
+	var labelStr = '<label></label>';
+	var inputStr = '<input class="form-control">';
+	
+	object.append(divStr);
+	var row = object.children('div').last();
+	row.attr("class","form-group");
+	row.append(labelStr);
+	row.append(inputStr);
+	
+	var label = row.children('label').last();
+	label.attr('for', id);
+	label.html(content);
+	
+	var input = row.children('input').last();
+	input.attr('id', id);
+	input.attr('type','text');
+	input.attr('placeholder', placeHolder);
+}
+
+ /*
+ * Add textArea to 'object'(jQuery) 
+ * Arguements:
+ *   'rows': number of rows of the textArea,
+ */
+function addTextArea(object, rows)
+{
+	var divStr = "<div></div>";
+	var textAreaStr = '<textarea class="form-control"></textarea>';
+	
+	object.append(divStr);
+	var row = object.children('div').last();
+	row.append(textAreaStr);
+	var textArea = row.children('textarea').last();
+	textArea.attr('rows',rows);
+}
+
+ /*
+ * Add subitButton to 'object'(jQuery) 
+ * Arguements:
+ *   'object': jQuery element,
+ */
+function addEndButton(object)
+{
+	var buttonStr = '<button type="submit" class="btn btn-default"></button>';
+	
+	object.append(buttonStr);
+	var button = object.children('button').last();
+	button.html('提交');
 }
