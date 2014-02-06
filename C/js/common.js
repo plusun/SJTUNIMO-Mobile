@@ -197,3 +197,20 @@ function addEndButton(object)
 	var button = object.children('button').last();
 	button.html('提交');
 }
+
+function checkform()
+{
+	$userName = document.getElementById("userName").value;
+	$userEmail = document.getElementById("userEmail").value;
+	if($userName=='')
+	{
+		alert("用户名不能为空");
+		return false;
+	}
+	if($userEmail=='')
+	{
+		alert("联系方式不能为空");
+		return false;
+	}
+	return true;
+}

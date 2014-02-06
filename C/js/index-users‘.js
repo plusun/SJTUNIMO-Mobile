@@ -59,10 +59,11 @@ var contactBody = createModal($(".container"), "contactModal", "我有话说", c
 contactBody = contactBody.children('div').last();
 contactBody.attr("cellpadding", 5);
 var form = createForm($("#formDiv"));
-addInput(form, '姓名', 'name', 'Enter Your Name');
-addInput(form, '联系方式', 'Email', 'Email or Mobile');
+addInput(form, '姓名', 'userName', 'Enter Your Name');
+addInput(form, '联系方式', 'userEmail', 'Email or Mobile');
 addTextArea(form, 3);
 addEndButton(form);
-
-
+form.attr("onsubmit", "return checkform()");
+form.attr("action", "#");
+form.attr("method", "post");
 
